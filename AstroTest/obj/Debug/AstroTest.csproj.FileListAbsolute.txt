@@ -1,0 +1,10 @@
+C:\Users\30048165\Source\Repos\AstroTest\bin\Debug\AstroTest.exe.config
+C:\Users\30048165\Source\Repos\AstroTest\bin\Debug\AstroTest.exe
+C:\Users\30048165\Source\Repos\AstroTest\bin\Debug\AstroTest.pdb
+C:\Users\30048165\Source\Repos\AstroTest\bin\Debug\AstroMath.dll
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.csproj.AssemblyReference.cache
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.csproj.SuggestedBindingRedirects.cache
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.csproj.CoreCompileInputs.cache
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.csproj.CopyComplete
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.exe
+C:\Users\30048165\Source\Repos\AstroTest\obj\Debug\AstroTest.pdb
