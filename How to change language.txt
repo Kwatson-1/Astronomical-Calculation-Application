@@ -1,0 +1,1 @@
+change to localizable, change the text for each corresponding language, and set the controls to the language.

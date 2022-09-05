@@ -8,3 +8,14 @@ C:\Users\Kyle\Documents\GitHub\Knowledge-Base-Resource-for-Leadership-Skills\Ast
 C:\Users\Kyle\Documents\GitHub\Knowledge-Base-Resource-for-Leadership-Skills\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.CoreCompileInputs.cache
 C:\Users\Kyle\Documents\GitHub\Knowledge-Base-Resource-for-Leadership-Skills\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.exe
 C:\Users\Kyle\Documents\GitHub\Knowledge-Base-Resource-for-Leadership-Skills\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.pdb
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\Astronomical Processing Application.exe.config
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\Astronomical Processing Application.exe
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\Astronomical Processing Application.pdb
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.AssemblyReference.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.SuggestedBindingRedirects.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.Form1.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.Properties.Resources.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.GenerateResource.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.CoreCompileInputs.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.exe
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.pdb

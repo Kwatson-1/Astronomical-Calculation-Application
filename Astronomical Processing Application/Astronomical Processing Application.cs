@@ -19,5 +19,17 @@ namespace Astronomical_Processing_Application
         {
             InitializeComponent();
         }
+
+
+
+        private void changeForegroundColour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changeBackgroundColour_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
