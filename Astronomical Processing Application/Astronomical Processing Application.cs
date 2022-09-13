@@ -31,5 +31,22 @@ namespace Astronomical_Processing_Application
         {
 
         }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //button.FlatStyle = FlatStyle.Flat;
+
     }
 }

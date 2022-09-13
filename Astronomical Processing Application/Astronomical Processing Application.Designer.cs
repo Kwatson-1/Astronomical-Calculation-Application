@@ -57,13 +57,17 @@
             this.textBoxEventHorizon = new System.Windows.Forms.TextBox();
             this.textBoxStarVelocity = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnStarVelocity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnStarVelocity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnEventHorizon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnStarDistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -101,80 +105,83 @@
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.languageToolStripMenuItem,
             this.themeToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.TabStop = true;
             // 
             // languageToolStripMenuItem
             // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.englishToolStripMenuItem,
             this.germanToolStripMenuItem,
             this.frenchToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             // 
             // englishToolStripMenuItem
             // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
             // 
             // germanToolStripMenuItem
             // 
-            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
             resources.ApplyResources(this.germanToolStripMenuItem, "germanToolStripMenuItem");
+            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
+            this.germanToolStripMenuItem.Click += new System.EventHandler(this.germanToolStripMenuItem_Click);
             // 
             // frenchToolStripMenuItem
             // 
-            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
             resources.ApplyResources(this.frenchToolStripMenuItem, "frenchToolStripMenuItem");
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
             // 
             // themeToolStripMenuItem
             // 
+            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeBackgroundColour,
             this.changeForegroundColour});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
             // 
             // changeBackgroundColour
             // 
-            this.changeBackgroundColour.Name = "changeBackgroundColour";
             resources.ApplyResources(this.changeBackgroundColour, "changeBackgroundColour");
+            this.changeBackgroundColour.Name = "changeBackgroundColour";
             this.changeBackgroundColour.Click += new System.EventHandler(this.changeBackgroundColour_Click);
             // 
             // changeForegroundColour
             // 
-            this.changeForegroundColour.Name = "changeForegroundColour";
             resources.ApplyResources(this.changeForegroundColour, "changeForegroundColour");
+            this.changeForegroundColour.Name = "changeForegroundColour";
             this.changeForegroundColour.Click += new System.EventHandler(this.changeForegroundColour_Click);
             // 
             // textBoxObservedWavelength
             // 
-            this.textBoxObservedWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBoxObservedWavelength, "textBoxObservedWavelength");
+            this.textBoxObservedWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxObservedWavelength.Name = "textBoxObservedWavelength";
             // 
             // textBoxBlackholeMass
             // 
-            this.textBoxBlackholeMass.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBoxBlackholeMass, "textBoxBlackholeMass");
+            this.textBoxBlackholeMass.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxBlackholeMass.Name = "textBoxBlackholeMass";
             // 
             // textBoxTemperatureCelcius
             // 
-            this.textBoxTemperatureCelcius.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBoxTemperatureCelcius, "textBoxTemperatureCelcius");
+            this.textBoxTemperatureCelcius.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxTemperatureCelcius.Name = "textBoxTemperatureCelcius";
             // 
             // textBoxArcsecondAngle
             // 
-            this.textBoxArcsecondAngle.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBoxArcsecondAngle, "textBoxArcsecondAngle");
+            this.textBoxArcsecondAngle.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxArcsecondAngle.Name = "textBoxArcsecondAngle";
             // 
             // button1
@@ -203,8 +210,8 @@
             // 
             // textBoxRestWavelength
             // 
-            this.textBoxRestWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBoxRestWavelength, "textBoxRestWavelength");
+            this.textBoxRestWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBoxRestWavelength.Name = "textBoxRestWavelength";
             // 
             // textBoxStarDistance
@@ -233,21 +240,10 @@
             // 
             // textBox12
             // 
-            this.textBox12.ForeColor = System.Drawing.SystemColors.ControlDark;
             resources.ApplyResources(this.textBox12, "textBox12");
+            this.textBox12.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnStarVelocity});
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("listView1.Items")))});
-            resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.Name = "listView1";
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // numericUpDown1
             // 
@@ -268,25 +264,60 @@
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            // 
+            // listView1
+            // 
+            resources.ApplyResources(this.listView1, "listView1");
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnStarVelocity,
+            this.columnEventHorizon,
+            this.Temperature,
+            this.columnStarDistance});
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Name = "listView1";
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // columnStarVelocity
+            // 
+            resources.ApplyResources(this.columnStarVelocity, "columnStarVelocity");
+            // 
+            // columnEventHorizon
+            // 
+            resources.ApplyResources(this.columnEventHorizon, "columnEventHorizon");
+            // 
+            // Temperature
+            // 
+            resources.ApplyResources(this.Temperature, "Temperature");
+            // 
+            // columnStarDistance
+            // 
+            resources.ApplyResources(this.columnStarDistance, "columnStarDistance");
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBoxStarDistance);
             this.Controls.Add(this.textBoxTemperatureKelvin);
@@ -350,13 +381,17 @@
         private System.Windows.Forms.TextBox textBoxEventHorizon;
         private System.Windows.Forms.TextBox textBoxStarVelocity;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnStarVelocity;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnStarVelocity;
+        private System.Windows.Forms.ColumnHeader columnEventHorizon;
+        private System.Windows.Forms.ColumnHeader Temperature;
+        private System.Windows.Forms.ColumnHeader columnStarDistance;
     }
 }
 

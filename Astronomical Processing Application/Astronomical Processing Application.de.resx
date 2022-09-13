@@ -118,92 +118,86 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Application de traitement astronomique</value>
+    <value>Astronomische Verarbeitungsanwendungen</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Vitesse des étoiles</value>
+    <value>Sterngeschwindigkeit</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Horizon des événements</value>
+    <value>Ereignishorizont</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Température</value>
+    <value>Temperatur</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Distance étoile</value>
+    <value>Sternenentfernung</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>135, 22</value>
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>Englaise</value>
+    <value>Englisch</value>
   </data>
   <data name="germanToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>135, 22</value>
   </data>
   <data name="germanToolStripMenuItem.Text" xml:space="preserve">
-    <value>Allemande</value>
+    <value>Deutsch</value>
   </data>
   <data name="frenchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
+    <value>135, 22</value>
   </data>
   <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Français</value>
+    <value>Französisch</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
+    <value>61, 20</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Langue</value>
+    <value>Sprache</value>
   </data>
   <data name="changeBackgroundColour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
+    <value>175, 22</value>
   </data>
   <data name="changeBackgroundColour.Text" xml:space="preserve">
-    <value>La couleur de fond</value>
+    <value>Hintergrundfarbe</value>
   </data>
   <data name="changeForegroundColour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 22</value>
-  </data>
-  <data name="changeForegroundColour.Text" xml:space="preserve">
-    <value>Couleur de premier plan</value>
+    <value>175, 22</value>
   </data>
   <data name="themeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Thème</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 99</value>
+    <value>Thema</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Calculer</value>
+    <value>Berechnung</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Calculer</value>
+    <value>Berechnung</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>Calculer</value>
+    <value>Berechnung</value>
   </data>
   <data name="button4.Text" xml:space="preserve">
-    <value>Calculer</value>
+    <value>Berechnung</value>
   </data>
   <data name="button5.Text" xml:space="preserve">
-    <value>Ajouter</value>
+    <value>Hinzufügen</value>
   </data>
   <data name="button6.Text" xml:space="preserve">
-    <value>Effacer</value>
+    <value>Löschen</value>
   </data>
   <data name="columnStarVelocity.Text" xml:space="preserve">
-    <value>Vitesse des étoiles</value>
+    <value>Sterngeschwindigkeit</value>
   </data>
   <data name="columnEventHorizon.Text" xml:space="preserve">
-    <value>Horizon des événements</value>
+    <value>Ereignishorizont</value>
   </data>
   <data name="Temperature.Text" xml:space="preserve">
-    <value>Température (Kelvin)</value>
+    <value>Temperatur (Kelvin)</value>
   </data>
   <data name="columnStarDistance.Text" xml:space="preserve">
-    <value>Distance étoile</value>
+    <value>Sternenentfernung</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
