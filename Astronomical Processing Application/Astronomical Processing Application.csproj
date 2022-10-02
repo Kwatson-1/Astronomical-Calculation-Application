@@ -52,6 +52,7 @@
     <Compile Include="Astronomical Processing Application.Designer.cs">
       <DependentUpon>Astronomical Processing Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Astronomical Processing Application.de.resx">

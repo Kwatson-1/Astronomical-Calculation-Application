@@ -24,11 +24,17 @@ C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\Astronomical Processing Application.pdb
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\fr\Astronomical Processing Application.resources.dll
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.AssemblyReference.cache
-C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.Form1.resources
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.Properties.Resources.resources
-C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.Form1.fr.resources
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.GenerateResource.cache
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.CoreCompileInputs.cache
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\fr\Astronomical Processing Application.resources.dll
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.exe
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.pdb
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\de\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Debug\en\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\de\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\en\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.AstronomcalProcessingApplication.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.AstronomcalProcessingApplication.de.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.AstronomcalProcessingApplication.en.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical_Processing_Application.AstronomcalProcessingApplication.fr.resources

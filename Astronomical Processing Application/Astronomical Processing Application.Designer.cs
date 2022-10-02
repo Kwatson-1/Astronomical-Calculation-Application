@@ -1,6 +1,6 @@
 ﻿namespace Astronomical_Processing_Application
 {
-    partial class Form1
+    partial class AstronomcalProcessingApplication
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstronomcalProcessingApplication));
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,16 +58,19 @@
             this.textBoxStarVelocity = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStarVelocity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnEventHorizon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Temperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTemperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStarDistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.testButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -218,25 +221,21 @@
             // 
             resources.ApplyResources(this.textBoxStarDistance, "textBoxStarDistance");
             this.textBoxStarDistance.Name = "textBoxStarDistance";
-            this.textBoxStarDistance.ReadOnly = true;
             // 
             // textBoxTemperatureKelvin
             // 
             resources.ApplyResources(this.textBoxTemperatureKelvin, "textBoxTemperatureKelvin");
             this.textBoxTemperatureKelvin.Name = "textBoxTemperatureKelvin";
-            this.textBoxTemperatureKelvin.ReadOnly = true;
             // 
             // textBoxEventHorizon
             // 
             resources.ApplyResources(this.textBoxEventHorizon, "textBoxEventHorizon");
             this.textBoxEventHorizon.Name = "textBoxEventHorizon";
-            this.textBoxEventHorizon.ReadOnly = true;
             // 
             // textBoxStarVelocity
             // 
             resources.ApplyResources(this.textBoxStarVelocity, "textBoxStarVelocity");
             this.textBoxStarVelocity.Name = "textBoxStarVelocity";
-            this.textBoxStarVelocity.ReadOnly = true;
             // 
             // textBox12
             // 
@@ -250,22 +249,26 @@
             resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.Name = "numericUpDown1";
             // 
-            // button5
+            // buttonAdd
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonAdd, "buttonAdd");
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // button6
+            // buttonDelete
             // 
-            resources.ApplyResources(this.button6, "button6");
-            this.button6.Name = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonDelete, "buttonDelete");
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel,
+            this.toolStripStatusLabel2});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
@@ -274,20 +277,33 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
+            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnStarVelocity,
             this.columnEventHorizon,
-            this.Temperature,
+            this.columnTemperature,
             this.columnStarDistance});
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             resources.ApplyResources(this.listView1, "listView1");
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -301,22 +317,30 @@
             // 
             resources.ApplyResources(this.columnEventHorizon, "columnEventHorizon");
             // 
-            // Temperature
+            // columnTemperature
             // 
-            resources.ApplyResources(this.Temperature, "Temperature");
+            resources.ApplyResources(this.columnTemperature, "columnTemperature");
             // 
             // columnStarDistance
             // 
             resources.ApplyResources(this.columnStarDistance, "columnStarDistance");
             // 
-            // Form1
+            // testButton
+            // 
+            resources.ApplyResources(this.testButton, "testButton");
+            this.testButton.Name = "testButton";
+            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            // 
+            // AstronomcalProcessingApplication
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.testButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBoxStarDistance);
@@ -339,8 +363,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "AstronomcalProcessingApplication";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -382,16 +407,19 @@
         private System.Windows.Forms.TextBox textBoxStarVelocity;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnStarVelocity;
         private System.Windows.Forms.ColumnHeader columnEventHorizon;
-        private System.Windows.Forms.ColumnHeader Temperature;
+        private System.Windows.Forms.ColumnHeader columnTemperature;
         private System.Windows.Forms.ColumnHeader columnStarDistance;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.Button testButton;
     }
 }
 
