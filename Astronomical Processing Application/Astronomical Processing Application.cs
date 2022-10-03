@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
-
+using System.ServiceModel;
 
 // Kyle Watson (30048165)
 // Date: 4/09/22
-
 
 namespace Astronomical_Processing_Application
 {
@@ -22,22 +21,48 @@ namespace Astronomical_Processing_Application
         public AstronomcalProcessingApplication()
         {
             InitializeComponent();
-            Console.WriteLine("The current UI culture: {0}",
-                        CultureInfo.CurrentUICulture.Name);
-
         }
 
         static List<Data> dataCollection = new List<Data>();
-        //public int[] CustomColors { get; set; }
+
+        // Forecolour is stored within an empty label variable when selected from the Colour Dialog box.
         private void changeForegroundColour_Click(object sender, EventArgs e)
         {
+            PickForeColour();
 
-
+            foreach (Control c in this.Controls)
+            {
+                    if(c is Label)
+                    {
+                        c.ForeColor = colourStore.ForeColor;
+                    }
+                    if (c is Button)
+                    {
+                        c.ForeColor = colourStore.ForeColor;
+                    }
+                    if(c is NumericUpDown)
+                    {
+                        c.ForeColor = colourStore.ForeColor;
+                    }
+                    if(c is TextBox)
+                    {
+                        c.ForeColor = colourStore.ForeColor;
+                        // If text box is read only backcolor needs to be changed before prior foreground colour change is recognised.
+                        if (checkReadOnly(c))
+                        {
+                            c.BackColor = colourStore.BackColor;
+                        }
+                    }
+                    if(c is MenuStrip)
+                    {
+                        c.ForeColor = colourStore.ForeColor;
+                    }
+            }
         }
 
         private void changeBackgroundColour_Click(object sender, EventArgs e)
         {
-            PickColour();
+            PickBackColour();
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,10 +157,12 @@ namespace Astronomical_Processing_Application
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(Control.ControlCollection.Find());
+            MessageBox.Show("Deleting System32..");
         }
-        //M
-        public void PickColour()
+
+        #region Method Pick Background Colour
+        // Initialises and opens a new Colour Dialogue box for setting the form background colour.
+        public void PickBackColour()
         {
             System.Windows.Forms.ColorDialog MyDialog = new ColorDialog();
             // Allows the user to select or edit a custom color.
@@ -149,6 +176,72 @@ namespace Astronomical_Processing_Application
             MyDialog.Color = this.BackColor;
             MyDialog.ShowDialog();
             this.BackColor = MyDialog.Color;
+        }
+        #endregion
+        #region Method Pick Foreground Colours
+        // Initialises and opens a new Colour Dialogue box for setting the form foreground colours.
+        public void PickForeColour()
+        {
+            System.Windows.Forms.ColorDialog MyDialog = new ColorDialog();
+            // Allows the user to select or edit a custom color.
+            MyDialog.AllowFullOpen = true;
+            // Assigns an array of custom colors to the CustomColors property
+            MyDialog.CustomColors = new int[]{6916092, 15195440, 16107657, 1836924,
+   3758726, 12566463, 7526079, 7405793, 6945974, 241502, 2296476, 5130294,
+   3102017, 7324121, 14993507, 11730944,};
+            // Sets the initial color select to the current text color,
+            // so that if the user cancels out, the original color is restored.
+            MyDialog.Color = this.ForeColor;
+            MyDialog.ShowDialog();
+            // Colour is stored in a dummy label which can be applied to other controls
+            colourStore.ForeColor = MyDialog.Color;
+        }
+        #endregion
+        #region Check Read Only
+        // Method checks if a text box control is read only. Supports changing foreground colour.
+        private bool checkReadOnly(Control control)
+        {
+            return ((TextBox)control).ReadOnly;
+        }
+        #endregion
+
+        private void calculateStarVelocityBtn_Click(object sender, EventArgs e)
+        {
+
+            //double.Parse(textBoxObservedWavelength.Text);
+            //double.Parse(textBoxRestWavelength.Text);
+        }
+
+        private void calculateEventHorizonBtn_Click(object sender, EventArgs e)
+        {
+            //double.Parse(textBoxBlackholeMass.Text);
+        }
+
+        private void calculateTemperature_Click(object sender, EventArgs e)
+        {
+            //string address = "net.pipe://localhost/AstroServer";
+            //NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
+            //EndpointAddress ep = new EndpointAddress(address);
+            //IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
+
+            //double temperatureKelvin = channel.TemperatureKelvin(double.Parse(textBoxTemperatureCelcius.Text));
+            //textBoxTemperatureKelvin.Text = temperatureKelvin.ToString();
+            //double.Parse(textBoxTemperatureCelcius.Text);
+
+            string address = "net.pipe://localhost/AstroServer";
+            NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
+            EndpointAddress ep = new EndpointAddress(address);
+            IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
+
+            double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
+
+            var result = channel.TemperatureKelvin(tempCelcius);
+            textBoxTemperatureKelvin.Text = result.ToString();
+        }
+
+        private void calculateStarDistance_Click(object sender, EventArgs e)
+        {
+            //double.Parse(textBoxArcsecondAngle.Text);
         }
     }
 

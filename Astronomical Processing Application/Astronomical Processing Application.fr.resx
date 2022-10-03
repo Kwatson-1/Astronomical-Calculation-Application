@@ -136,12 +136,6 @@
     <value>Distance étoile</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Langue</value>
-  </data>
   <data name="englishToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAP8AAACACAMAAADzok/sAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -276,8 +270,11 @@
   <data name="frenchToolStripMenuItem.Text" xml:space="preserve">
     <value>Français</value>
   </data>
-  <data name="themeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Thème</value>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Langue</value>
   </data>
   <data name="changeBackgroundColour.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 22</value>
@@ -290,6 +287,9 @@
   </data>
   <data name="changeForegroundColour.Text" xml:space="preserve">
     <value>Couleur de premier plan</value>
+  </data>
+  <data name="themeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Thème</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 99</value>
@@ -312,16 +312,19 @@
   <data name="buttonDelete.Text" xml:space="preserve">
     <value>Effacer</value>
   </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 383</value>
-  </data>
   <data name="columnStarVelocity.Text" xml:space="preserve">
     <value>Vitesse des étoiles</value>
   </data>
   <data name="columnEventHorizon.Text" xml:space="preserve">
     <value>Horizon des événements</value>
   </data>
+  <data name="columnTemperature.Text" xml:space="preserve">
+    <value>Température</value>
+  </data>
   <data name="columnStarDistance.Text" xml:space="preserve">
     <value>Distance étoile</value>
+  </data>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 383</value>
   </data>
 </root>

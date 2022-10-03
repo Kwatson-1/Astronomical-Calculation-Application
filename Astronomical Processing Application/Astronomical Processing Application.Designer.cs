@@ -47,10 +47,10 @@
             this.textBoxBlackholeMass = new System.Windows.Forms.TextBox();
             this.textBoxTemperatureCelcius = new System.Windows.Forms.TextBox();
             this.textBoxArcsecondAngle = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.calculateStarVelocityBtn = new System.Windows.Forms.Button();
+            this.calculateEventHorizonBtn = new System.Windows.Forms.Button();
+            this.calculateTemperature = new System.Windows.Forms.Button();
+            this.calculateStarDistance = new System.Windows.Forms.Button();
             this.textBoxRestWavelength = new System.Windows.Forms.TextBox();
             this.textBoxStarDistance = new System.Windows.Forms.TextBox();
             this.textBoxTemperatureKelvin = new System.Windows.Forms.TextBox();
@@ -71,6 +71,7 @@
             this.columnTemperature = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnStarDistance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.testButton = new System.Windows.Forms.Button();
+            this.colourStore = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -187,29 +188,33 @@
             resources.ApplyResources(this.textBoxArcsecondAngle, "textBoxArcsecondAngle");
             this.textBoxArcsecondAngle.Name = "textBoxArcsecondAngle";
             // 
-            // button1
+            // calculateStarVelocityBtn
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.calculateStarVelocityBtn, "calculateStarVelocityBtn");
+            this.calculateStarVelocityBtn.Name = "calculateStarVelocityBtn";
+            this.calculateStarVelocityBtn.UseVisualStyleBackColor = true;
+            this.calculateStarVelocityBtn.Click += new System.EventHandler(this.calculateStarVelocityBtn_Click);
             // 
-            // button2
+            // calculateEventHorizonBtn
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.calculateEventHorizonBtn, "calculateEventHorizonBtn");
+            this.calculateEventHorizonBtn.Name = "calculateEventHorizonBtn";
+            this.calculateEventHorizonBtn.UseVisualStyleBackColor = true;
+            this.calculateEventHorizonBtn.Click += new System.EventHandler(this.calculateEventHorizonBtn_Click);
             // 
-            // button3
+            // calculateTemperature
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.calculateTemperature, "calculateTemperature");
+            this.calculateTemperature.Name = "calculateTemperature";
+            this.calculateTemperature.UseVisualStyleBackColor = true;
+            this.calculateTemperature.Click += new System.EventHandler(this.calculateTemperature_Click);
             // 
-            // button4
+            // calculateStarDistance
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.calculateStarDistance, "calculateStarDistance");
+            this.calculateStarDistance.Name = "calculateStarDistance";
+            this.calculateStarDistance.UseVisualStyleBackColor = true;
+            this.calculateStarDistance.Click += new System.EventHandler(this.calculateStarDistance_Click);
             // 
             // textBoxRestWavelength
             // 
@@ -301,6 +306,7 @@
             resources.ApplyResources(this.listView1, "listView1");
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
+            this.listView1.OwnerDraw = true;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
@@ -332,10 +338,16 @@
             this.testButton.UseVisualStyleBackColor = true;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
+            // colourStore
+            // 
+            resources.ApplyResources(this.colourStore, "colourStore");
+            this.colourStore.Name = "colourStore";
+            // 
             // AstronomcalProcessingApplication
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.colourStore);
             this.Controls.Add(this.testButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
@@ -348,10 +360,10 @@
             this.Controls.Add(this.textBoxEventHorizon);
             this.Controls.Add(this.textBoxStarVelocity);
             this.Controls.Add(this.textBoxRestWavelength);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.calculateStarDistance);
+            this.Controls.Add(this.calculateTemperature);
+            this.Controls.Add(this.calculateEventHorizonBtn);
+            this.Controls.Add(this.calculateStarVelocityBtn);
             this.Controls.Add(this.textBoxArcsecondAngle);
             this.Controls.Add(this.textBoxTemperatureCelcius);
             this.Controls.Add(this.textBoxBlackholeMass);
@@ -396,10 +408,10 @@
         private System.Windows.Forms.TextBox textBoxBlackholeMass;
         private System.Windows.Forms.TextBox textBoxTemperatureCelcius;
         private System.Windows.Forms.TextBox textBoxArcsecondAngle;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button calculateStarVelocityBtn;
+        private System.Windows.Forms.Button calculateEventHorizonBtn;
+        private System.Windows.Forms.Button calculateTemperature;
+        private System.Windows.Forms.Button calculateStarDistance;
         private System.Windows.Forms.TextBox textBoxRestWavelength;
         private System.Windows.Forms.TextBox textBoxStarDistance;
         private System.Windows.Forms.TextBox textBoxTemperatureKelvin;
@@ -420,6 +432,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Label colourStore;
     }
 }
 
