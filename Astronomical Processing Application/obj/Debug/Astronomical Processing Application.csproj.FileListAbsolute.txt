@@ -47,3 +47,4 @@ C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronom
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\de\Astronomical Processing Application.resources.dll
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\en\Astronomical Processing Application.resources.dll
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\fr\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Debug\Astronomical Processing Application.csproj.SuggestedBindingRedirects.cache

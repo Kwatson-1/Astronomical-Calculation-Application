@@ -228,20 +228,51 @@ namespace Astronomical_Processing_Application
             //textBoxTemperatureKelvin.Text = temperatureKelvin.ToString();
             //double.Parse(textBoxTemperatureCelcius.Text);
 
-            string address = "net.pipe://localhost/AstroServer";
-            NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
-            EndpointAddress ep = new EndpointAddress(address);
-            IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
+            //Use this code
+            //string address = "net.pipe://localhost/AstroServer";
+            //NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
+            //EndpointAddress ep = new EndpointAddress(address);
+            //IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
+
+            IAstroContract channel = CommunicationChannel();
 
             double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
-
             var result = channel.TemperatureKelvin(tempCelcius);
             textBoxTemperatureKelvin.Text = result.ToString();
+            Console.WriteLine("The type is: " + channel.GetType());
         }
 
         private void calculateStarDistance_Click(object sender, EventArgs e)
         {
-            //double.Parse(textBoxArcsecondAngle.Text);
+            IAstroContract channel = CommunicationChannel();
+
+            double arcsecondAngle = double.Parse(textBoxArcsecondAngle.Text) * Math.Pow(10, double.Parse(numericUpDown1.Value.ToString()));
+            var result = channel.StarDistance(arcsecondAngle);
+            while (true)
+            {
+                int counter;
+                if(result > 10)
+                {
+                    result %= 10;
+                    counter++;
+                }
+
+
+            }
+
+            textBoxStarDistance.Text = result.ToString();
+            Console.WriteLine("The type is: " + channel.GetType());
+        }
+
+        // Method which generates a new run-time communication stack using a prepared address
+        // and enables creation of a communication channel to the server without a proxy which is returned
+        private Astronomical_Processing_Application.IAstroContract CommunicationChannel()
+        {
+            string address = "net.pipe://localhost/AstroServer";
+            NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
+            EndpointAddress ep = new EndpointAddress(address);
+            IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
+            return channel;
         }
     }
 

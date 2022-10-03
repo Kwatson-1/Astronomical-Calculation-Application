@@ -8,3 +8,13 @@ C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\IAstroCo
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.csproj.CopyComplete
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.exe
 C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.pdb
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\bin\Debug\AstroServer.exe.config
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\bin\Debug\AstroServer.exe
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\bin\Debug\AstroServer.pdb
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\bin\Debug\AstroMath.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.csproj.AssemblyReference.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.csproj.CoreCompileInputs.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.csproj.CopyComplete
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.exe
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\IAstroContract\obj\Debug\AstroServer.pdb

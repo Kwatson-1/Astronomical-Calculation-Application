@@ -25,18 +25,6 @@ namespace Astronomical_Processing_Application
             EndpointAddress ep = new EndpointAddress(address);
             IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
 
-            //Console.WriteLine("Client Started");
-            //ChannelFactory<IAstroContract> pipeFactory =
-            //new ChannelFactory<IAstroContract>(
-            //new NetNamedPipeBinding(),
-            //new EndpointAddress("net.pipe://localhost/AstroServer"));
-            //IAstroContract pipeProxy = pipeFactory.CreateChannel();
-            //while (true)
-            //{
-            //    string str = Console.ReadLine();
-            //    Console.WriteLine("pipe: " + pipeProxy.StarVelocity(str));
-
-            //}
         }
     }
 }
