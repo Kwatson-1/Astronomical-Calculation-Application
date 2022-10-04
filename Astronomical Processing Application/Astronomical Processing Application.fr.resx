@@ -291,19 +291,16 @@
   <data name="themeToolStripMenuItem.Text" xml:space="preserve">
     <value>Thème</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 99</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="calculateStarVelocity.Text" xml:space="preserve">
     <value>Calculer</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="calculateStarDistance.Text" xml:space="preserve">
     <value>Calculer</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
+  <data name="calculateTemperature.Text" xml:space="preserve">
     <value>Calculer</value>
   </data>
-  <data name="button4.Text" xml:space="preserve">
+  <data name="calculateEventHorizon.Text" xml:space="preserve">
     <value>Calculer</value>
   </data>
   <data name="buttonAdd.Text" xml:space="preserve">
@@ -315,14 +312,14 @@
   <data name="columnStarVelocity.Text" xml:space="preserve">
     <value>Vitesse des étoiles</value>
   </data>
-  <data name="columnEventHorizon.Text" xml:space="preserve">
-    <value>Horizon des événements</value>
+  <data name="columnStarDistance.Text" xml:space="preserve">
+    <value>Distance étoile</value>
   </data>
   <data name="columnTemperature.Text" xml:space="preserve">
     <value>Température</value>
   </data>
-  <data name="columnStarDistance.Text" xml:space="preserve">
-    <value>Distance étoile</value>
+  <data name="columnEventHorizon.Text" xml:space="preserve">
+    <value>Horizon des événements</value>
   </data>
   <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 383</value>

@@ -133,32 +133,15 @@ namespace Astronomical_Processing_Application
             dataCollection.Remove(dataCollection[selectedRecord]);
             //button.FlatStyle = FlatStyle.Flat;
         }
-
+        #region Method Double Click Delete
+        // Method for deleting items within the list view box via double clicking
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             DeleteMethod();
             DisplayList();
         }
+        #endregion
 
-
-
-        public void ChangeLanguage(string language)
-        {
-            foreach (Control c in this.Controls)
-            {
-                if (c.HasChildren)
-                {
-
-                }
-            }
-            Controls.Clear();
-            InitializeComponent();
-        }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Deleting System32..");
-        }
 
         #region Method Pick Background Colour
         // Initialises and opens a new Colour Dialogue box for setting the form background colour.
@@ -204,45 +187,18 @@ namespace Astronomical_Processing_Application
             return ((TextBox)control).ReadOnly;
         }
         #endregion
-
+        // Button calculate method for star velocity
         private void calculateStarVelocityBtn_Click(object sender, EventArgs e)
         {
-
-            //double.Parse(textBoxObservedWavelength.Text);
-            //double.Parse(textBoxRestWavelength.Text);
-        }
-
-        private void calculateEventHorizonBtn_Click(object sender, EventArgs e)
-        {
-            //double.Parse(textBoxBlackholeMass.Text);
-        }
-
-        private void calculateTemperature_Click(object sender, EventArgs e)
-        {
-            //string address = "net.pipe://localhost/AstroServer";
-            //NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
-            //EndpointAddress ep = new EndpointAddress(address);
-            //IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
-
-            //double temperatureKelvin = channel.TemperatureKelvin(double.Parse(textBoxTemperatureCelcius.Text));
-            //textBoxTemperatureKelvin.Text = temperatureKelvin.ToString();
-            //double.Parse(textBoxTemperatureCelcius.Text);
-
-            //Use this code
-            //string address = "net.pipe://localhost/AstroServer";
-            //NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);
-            //EndpointAddress ep = new EndpointAddress(address);
-            //IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
-
             IAstroContract channel = CommunicationChannel();
 
-            double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
-            var result = channel.TemperatureKelvin(tempCelcius);
-            textBoxTemperatureKelvin.Text = result.ToString();
-            Console.WriteLine("The type is: " + channel.GetType());
+            double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
+            double restWavelength = double.Parse(textBoxRestWavelength.Text);
+            var result = channel.StarVelocity(observedWavelength, restWavelength);
+            textBoxStarVelocity.Text = result.ToString("F");
         }
-
-        private void calculateStarDistance_Click(object sender, EventArgs e)
+        // Button calculate method for event horizon
+        private void calculateEventHorizonBtn_Click(object sender, EventArgs e)
         {
             IAstroContract channel = CommunicationChannel();
 
@@ -250,6 +206,7 @@ namespace Astronomical_Processing_Application
             var result = channel.EventHorizon(blackholeMass);
 
             int counter = 0;
+            // Handles results with a positive exponent
             if (result > 10)
             {
                 while (result > 10)
@@ -259,16 +216,35 @@ namespace Astronomical_Processing_Application
                 }
                 textBoxEventHorizon.Text = result.ToString("F") + "E" + counter;
             }
-
-            if (result < -10)
+            // Handles results with a negative exponent
+            if (result < 1)
             {
-                while (result < -10)
+                while (result < 1)
                 {
                     result *= 10;
                     counter++;
                 }
                 textBoxEventHorizon.Text = result.ToString("F") + "E-" + counter;
             }
+        }
+        // Button calculate method for temperature
+        private void calculateTemperature_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+
+            double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
+            var result = channel.TemperatureKelvin(tempCelcius);
+            textBoxTemperatureKelvin.Text = result.ToString("F");
+
+        }
+        // Button calculate method for star distance
+        private void calculateStarDistance_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+
+            double arcsecondAngle = double.Parse(textBoxArcsecondAngle.Text);
+            var result = channel.StarDistance(arcsecondAngle);
+            textBoxStarDistance.Text = result.ToString("F");
 
         }
 
@@ -285,7 +261,7 @@ namespace Astronomical_Processing_Application
 
         private void AstronomcalProcessingApplication_Load(object sender, EventArgs e)
         {
-            // Controls the form open location
+            // Controls the form open location - development purposes only
             this.Location = Screen.AllScreens[1].WorkingArea.Location;
         }
     }

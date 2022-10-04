@@ -288,16 +288,16 @@
   <data name="changeForegroundColour.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="calculateStarVelocity.Text" xml:space="preserve">
     <value>Berechnung</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="calculateStarDistance.Text" xml:space="preserve">
     <value>Berechnung</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
+  <data name="calculateTemperature.Text" xml:space="preserve">
     <value>Berechnung</value>
   </data>
-  <data name="button4.Text" xml:space="preserve">
+  <data name="calculateEventHorizon.Text" xml:space="preserve">
     <value>Berechnung</value>
   </data>
   <data name="buttonAdd.Text" xml:space="preserve">
@@ -309,13 +309,13 @@
   <data name="columnStarVelocity.Text" xml:space="preserve">
     <value>Sterngeschwindigkeit</value>
   </data>
-  <data name="columnEventHorizon.Text" xml:space="preserve">
-    <value>Ereignishorizont</value>
+  <data name="columnStarDistance.Text" xml:space="preserve">
+    <value>Sternenentfernung</value>
   </data>
   <data name="columnTemperature.Text" xml:space="preserve">
     <value>Temperatur</value>
   </data>
-  <data name="columnStarDistance.Text" xml:space="preserve">
-    <value>Sternenentfernung</value>
+  <data name="columnEventHorizon.Text" xml:space="preserve">
+    <value>Ereignishorizont</value>
   </data>
 </root>
