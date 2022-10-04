@@ -250,14 +250,26 @@ namespace Astronomical_Processing_Application
             var result = channel.EventHorizon(blackholeMass);
 
             int counter = 0;
-
-            while(result > 10)
+            if (result > 10)
             {
-                result /= 10;
-                counter++;
+                while (result > 10)
+                {
+                    result /= 10;
+                    counter++;
+                }
+                textBoxEventHorizon.Text = result.ToString("F") + "E" + counter;
             }
 
-            textBoxEventHorizon.Text = result.ToString() + "E" + counter;
+            if (result < -10)
+            {
+                while (result < -10)
+                {
+                    result *= 10;
+                    counter++;
+                }
+                textBoxEventHorizon.Text = result.ToString("F") + "E-" + counter;
+            }
+
         }
 
         // Method which generates a new run-time communication stack using a prepared address
