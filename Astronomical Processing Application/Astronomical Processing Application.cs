@@ -32,31 +32,31 @@ namespace Astronomical_Processing_Application
 
             foreach (Control c in this.Controls)
             {
-                    if(c is Label)
+                if (c is Label)
+                {
+                    c.ForeColor = colourStore.ForeColor;
+                }
+                if (c is Button)
+                {
+                    c.ForeColor = colourStore.ForeColor;
+                }
+                if (c is NumericUpDown)
+                {
+                    c.ForeColor = colourStore.ForeColor;
+                }
+                if (c is TextBox)
+                {
+                    c.ForeColor = colourStore.ForeColor;
+                    // If text box is read only backcolor needs to be changed before prior foreground colour change is recognised.
+                    if (checkReadOnly(c))
                     {
-                        c.ForeColor = colourStore.ForeColor;
+                        c.BackColor = colourStore.BackColor;
                     }
-                    if (c is Button)
-                    {
-                        c.ForeColor = colourStore.ForeColor;
-                    }
-                    if(c is NumericUpDown)
-                    {
-                        c.ForeColor = colourStore.ForeColor;
-                    }
-                    if(c is TextBox)
-                    {
-                        c.ForeColor = colourStore.ForeColor;
-                        // If text box is read only backcolor needs to be changed before prior foreground colour change is recognised.
-                        if (checkReadOnly(c))
-                        {
-                            c.BackColor = colourStore.BackColor;
-                        }
-                    }
-                    if(c is MenuStrip)
-                    {
-                        c.ForeColor = colourStore.ForeColor;
-                    }
+                }
+                if (c is MenuStrip)
+                {
+                    c.ForeColor = colourStore.ForeColor;
+                }
             }
         }
 
@@ -91,13 +91,13 @@ namespace Astronomical_Processing_Application
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxStarVelocity.Text) && String.IsNullOrEmpty(textBoxEventHorizon.Text) && String.IsNullOrEmpty(textBoxTemperatureKelvin.Text) && String.IsNullOrEmpty(textBoxStarDistance.Text))
+            if (String.IsNullOrEmpty(textBoxStarVelocity.Text) && String.IsNullOrEmpty(textBoxStarDistance.Text) && String.IsNullOrEmpty(textBoxTemperatureKelvin.Text) && String.IsNullOrEmpty(textBoxEventHorizon.Text))
             {
                 MessageBox.Show("Error");
             }
             else
             {
-                Data data = new Data(textBoxStarVelocity.Text, textBoxEventHorizon.Text, textBoxTemperatureKelvin.Text, textBoxStarDistance.Text);
+                Data data = new Data(textBoxStarVelocity.Text, textBoxStarDistance.Text, textBoxTemperatureKelvin.Text, textBoxEventHorizon.Text);
                 dataCollection.Add(data);
             }
             DisplayList();
@@ -246,22 +246,18 @@ namespace Astronomical_Processing_Application
         {
             IAstroContract channel = CommunicationChannel();
 
-            double arcsecondAngle = double.Parse(textBoxArcsecondAngle.Text) * Math.Pow(10, double.Parse(numericUpDown1.Value.ToString()));
-            var result = channel.StarDistance(arcsecondAngle);
-            while (true)
+            double blackholeMass = double.Parse(textBoxBlackholeMass.Text) * (Math.Pow(10, double.Parse(numericUpDown1.Value.ToString())));
+            var result = channel.EventHorizon(blackholeMass);
+
+            int counter = 0;
+
+            while(result > 10)
             {
-                int counter;
-                if(result > 10)
-                {
-                    result %= 10;
-                    counter++;
-                }
-
-
+                result /= 10;
+                counter++;
             }
 
-            textBoxStarDistance.Text = result.ToString();
-            Console.WriteLine("The type is: " + channel.GetType());
+            textBoxEventHorizon.Text = result.ToString() + "E" + counter;
         }
 
         // Method which generates a new run-time communication stack using a prepared address
@@ -273,6 +269,12 @@ namespace Astronomical_Processing_Application
             EndpointAddress ep = new EndpointAddress(address);
             IAstroContract channel = ChannelFactory<IAstroContract>.CreateChannel(binding, ep);
             return channel;
+        }
+
+        private void AstronomcalProcessingApplication_Load(object sender, EventArgs e)
+        {
+            // Controls the form open location
+            this.Location = Screen.AllScreens[1].WorkingArea.Location;
         }
     }
 
