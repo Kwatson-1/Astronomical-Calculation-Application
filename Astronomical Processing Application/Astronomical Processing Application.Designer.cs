@@ -43,6 +43,7 @@
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeBackgroundColour = new System.Windows.Forms.ToolStripMenuItem();
             this.changeForegroundColour = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightDarkModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxObservedWavelength = new System.Windows.Forms.TextBox();
             this.textBoxArcsecondAngle = new System.Windows.Forms.TextBox();
             this.textBoxTemperatureCelcius = new System.Windows.Forms.TextBox();
@@ -108,22 +109,22 @@
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.languageToolStripMenuItem,
             this.themeToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.TabStop = true;
             // 
             // languageToolStripMenuItem
             // 
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.englishToolStripMenuItem,
             this.germanToolStripMenuItem,
             this.frenchToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             // 
             // englishToolStripMenuItem
             // 
@@ -145,47 +146,66 @@
             // 
             // themeToolStripMenuItem
             // 
-            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeBackgroundColour,
-            this.changeForegroundColour});
+            this.changeForegroundColour,
+            this.lightDarkModeToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            resources.ApplyResources(this.themeToolStripMenuItem, "themeToolStripMenuItem");
             // 
             // changeBackgroundColour
             // 
-            resources.ApplyResources(this.changeBackgroundColour, "changeBackgroundColour");
             this.changeBackgroundColour.Name = "changeBackgroundColour";
+            resources.ApplyResources(this.changeBackgroundColour, "changeBackgroundColour");
             this.changeBackgroundColour.Click += new System.EventHandler(this.changeBackgroundColour_Click);
             // 
             // changeForegroundColour
             // 
-            resources.ApplyResources(this.changeForegroundColour, "changeForegroundColour");
             this.changeForegroundColour.Name = "changeForegroundColour";
+            resources.ApplyResources(this.changeForegroundColour, "changeForegroundColour");
             this.changeForegroundColour.Click += new System.EventHandler(this.changeForegroundColour_Click);
+            // 
+            // lightDarkModeToolStripMenuItem
+            // 
+            this.lightDarkModeToolStripMenuItem.Name = "lightDarkModeToolStripMenuItem";
+            resources.ApplyResources(this.lightDarkModeToolStripMenuItem, "lightDarkModeToolStripMenuItem");
+            this.lightDarkModeToolStripMenuItem.Click += new System.EventHandler(this.lightDarkModeToolStripMenuItem_Click);
             // 
             // textBoxObservedWavelength
             // 
-            resources.ApplyResources(this.textBoxObservedWavelength, "textBoxObservedWavelength");
             this.textBoxObservedWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBoxObservedWavelength, "textBoxObservedWavelength");
             this.textBoxObservedWavelength.Name = "textBoxObservedWavelength";
+            this.textBoxObservedWavelength.DoubleClick += new System.EventHandler(this.textBoxObservedWavelength_DoubleClick);
+            this.textBoxObservedWavelength.Enter += new System.EventHandler(this.textBoxObservedWavelength_Enter);
+            this.textBoxObservedWavelength.Leave += new System.EventHandler(this.textBoxObservedWavelength_Leave);
             // 
             // textBoxArcsecondAngle
             // 
-            resources.ApplyResources(this.textBoxArcsecondAngle, "textBoxArcsecondAngle");
             this.textBoxArcsecondAngle.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBoxArcsecondAngle, "textBoxArcsecondAngle");
             this.textBoxArcsecondAngle.Name = "textBoxArcsecondAngle";
+            this.textBoxArcsecondAngle.DoubleClick += new System.EventHandler(this.textBoxArcsecondAngle_DoubleClick);
+            this.textBoxArcsecondAngle.Enter += new System.EventHandler(this.textBoxArcsecondAngle_Enter);
+            this.textBoxArcsecondAngle.Leave += new System.EventHandler(this.textBoxArcsecondAngle_Leave);
             // 
             // textBoxTemperatureCelcius
             // 
-            resources.ApplyResources(this.textBoxTemperatureCelcius, "textBoxTemperatureCelcius");
             this.textBoxTemperatureCelcius.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBoxTemperatureCelcius, "textBoxTemperatureCelcius");
             this.textBoxTemperatureCelcius.Name = "textBoxTemperatureCelcius";
+            this.textBoxTemperatureCelcius.DoubleClick += new System.EventHandler(this.textBoxTemperatureCelcius_DoubleClick);
+            this.textBoxTemperatureCelcius.Enter += new System.EventHandler(this.textBoxTemperatureCelcius_Enter);
+            this.textBoxTemperatureCelcius.Leave += new System.EventHandler(this.textBoxTemperatureCelcius_Leave);
             // 
             // textBoxBlackholeMass
             // 
-            resources.ApplyResources(this.textBoxBlackholeMass, "textBoxBlackholeMass");
             this.textBoxBlackholeMass.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBoxBlackholeMass, "textBoxBlackholeMass");
             this.textBoxBlackholeMass.Name = "textBoxBlackholeMass";
+            this.textBoxBlackholeMass.DoubleClick += new System.EventHandler(this.textBoxBlackholeMass_DoubleClick);
+            this.textBoxBlackholeMass.Enter += new System.EventHandler(this.textBoxBlackholeMass_Enter);
+            this.textBoxBlackholeMass.Leave += new System.EventHandler(this.textBoxBlackholeMass_Leave);
             // 
             // calculateStarVelocity
             // 
@@ -217,9 +237,12 @@
             // 
             // textBoxRestWavelength
             // 
-            resources.ApplyResources(this.textBoxRestWavelength, "textBoxRestWavelength");
             this.textBoxRestWavelength.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBoxRestWavelength, "textBoxRestWavelength");
             this.textBoxRestWavelength.Name = "textBoxRestWavelength";
+            this.textBoxRestWavelength.DoubleClick += new System.EventHandler(this.textBoxRestWavelength_DoubleClick);
+            this.textBoxRestWavelength.Enter += new System.EventHandler(this.textBoxRestWavelength_Enter);
+            this.textBoxRestWavelength.Leave += new System.EventHandler(this.textBoxRestWavelength_Leave);
             // 
             // textBoxEventHorizon
             // 
@@ -243,8 +266,8 @@
             // 
             // textBox12
             // 
-            resources.ApplyResources(this.textBox12, "textBox12");
             this.textBox12.ForeColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.textBox12, "textBox12");
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
             // 
@@ -269,31 +292,30 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel,
             this.toolStripStatusLabel2});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // toolStripStatusLabel
             // 
-            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
             // 
             // toolStripStatusLabel2
             // 
-            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
             // 
             // listView1
             // 
-            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnStarVelocity,
@@ -303,6 +325,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -369,6 +392,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AstronomcalProcessingApplication";
             this.Load += new System.EventHandler(this.AstronomcalProcessingApplication_Load);
+            this.Click += new System.EventHandler(this.AstronomcalProcessingApplication_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -423,6 +447,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Label colourStore;
+        private System.Windows.Forms.ToolStripMenuItem lightDarkModeToolStripMenuItem;
     }
 }
 

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.ServiceModel;
+using System.Windows.Media;
+
 
 // Kyle Watson (30048165)
 // Date: 4/09/22
@@ -263,6 +265,186 @@ namespace Astronomical_Processing_Application
         {
             // Controls the form open location - development purposes only
             this.Location = Screen.AllScreens[1].WorkingArea.Location;
+        }
+
+        // Light mode and dark mode toggle button
+        private void lightDarkModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Drawing.Color foreground = new System.Drawing.Color();
+            System.Drawing.Color background = new System.Drawing.Color();
+            System.Drawing.Color midground = new System.Drawing.Color();
+
+            // Light Mode
+            if (lightDarkModeToolStripMenuItem.Checked == true)
+            {
+                lightDarkModeToolStripMenuItem.Checked = false;
+
+                foreground = System.Drawing.Color.FromArgb(34, 34, 34);
+                background = System.Drawing.Color.FromArgb(222, 228, 239);
+                midground = System.Drawing.Color.FromArgb(55, 71, 79);
+
+                this.BackColor = background;
+                foreach (Control c in this.Controls)
+                {
+                    if (c is Label)
+                    {
+                        c.ForeColor = foreground;
+                    }
+                    if (c is Button)
+                    {
+                        c.ForeColor = midground;
+                    }
+                    if (c is NumericUpDown)
+                    {
+                        c.ForeColor = foreground;
+                    }
+                    if (c is TextBox)
+                    {
+                        c.ForeColor = foreground;
+                        // If text box is read only backcolor needs to be changed before prior foreground colour change is recognised.
+                        if (checkReadOnly(c))
+                        {
+                            c.BackColor = background;
+                        }
+                    }
+                    if (c is MenuStrip)
+                    {
+                        c.ForeColor = foreground;
+                    }
+                }
+            }
+            // Dark Mode
+            else if (lightDarkModeToolStripMenuItem.Checked == false)
+            {
+                lightDarkModeToolStripMenuItem.Checked = true;
+
+                foreground = System.Drawing.Color.FromArgb(222, 228, 239);
+                background = System.Drawing.Color.FromArgb(34, 34, 34);
+                midground = System.Drawing.Color.FromArgb(55, 71, 79);
+                this.BackColor = background;
+                foreach (Control c in this.Controls)
+                {
+                    if (c is Label)
+                    {
+                        c.ForeColor = foreground;
+                    }
+                    if (c is Button)
+                    {
+                        c.ForeColor = midground;
+                    }
+                    if (c is NumericUpDown)
+                    {
+                        c.ForeColor = foreground;
+                    }
+                    if (c is TextBox)
+                    {
+                        c.ForeColor = foreground;
+                        // If text box is read only backcolor needs to be changed before prior foreground colour change is recognised.
+                        if (checkReadOnly(c))
+                        {
+                            c.BackColor = background;
+                        }
+                    }
+                    if (c is MenuStrip)
+                    {
+                        c.ForeColor = midground;
+                    }
+                }
+            }
+
+
+        }
+        #region Double Click Clear Input TextBoxes
+        private void textBoxObservedWavelength_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxObservedWavelength.Clear();
+        }
+
+        private void textBoxRestWavelength_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxRestWavelength.Clear();
+        }
+
+        private void textBoxArcsecondAngle_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxArcsecondAngle.Clear();
+        }
+
+        private void textBoxTemperatureCelcius_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxTemperatureCelcius.Clear();
+        }
+
+        private void textBoxBlackholeMass_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxBlackholeMass.Clear();
+        }
+        #endregion
+
+        private void textBoxObservedWavelength_Enter(object sender, EventArgs e)
+        {
+            if (textBoxObservedWavelength.Text == "Observed Wavelength")
+                textBoxObservedWavelength.Clear();
+        }
+        #region Input Textboxes Enter
+        private void textBoxRestWavelength_Enter(object sender, EventArgs e)
+        {
+            if (textBoxRestWavelength.Text == "Rest Wavelength")
+                textBoxRestWavelength.Clear();
+        }
+
+        private void textBoxArcsecondAngle_Enter(object sender, EventArgs e)
+        {
+            if (textBoxArcsecondAngle.Text == "Arcsecond Angle")
+                textBoxArcsecondAngle.Clear();
+        }
+
+        private void textBoxTemperatureCelcius_Enter(object sender, EventArgs e)
+        {
+            if (textBoxTemperatureCelcius.Text == "Temperature (Celcius)")
+                textBoxTemperatureCelcius.Clear();
+        }
+
+        private void textBoxBlackholeMass_Enter(object sender, EventArgs e)
+        {
+            if (textBoxBlackholeMass.Text == "Blackhole Mass")
+                textBoxBlackholeMass.Clear();
+        }
+        #endregion
+        #region Input Textboxes Leave
+        private void textBoxObservedWavelength_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxObservedWavelength.Text))
+                textBoxObservedWavelength.Text = "Observed Wavelength";
+        }
+
+        private void textBoxRestWavelength_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxRestWavelength.Text))
+                textBoxRestWavelength.Text = "Rest Wavelength";
+        }
+
+        private void textBoxArcsecondAngle_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxArcsecondAngle.Text))
+                textBoxArcsecondAngle.Text = "Arcsecond Angle";
+        }
+
+        private void textBoxTemperatureCelcius_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxTemperatureCelcius.Text))
+                textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
+        }
+
+        private void textBoxBlackholeMass_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxBlackholeMass.Text))
+                textBoxBlackholeMass.Text = "Blackhole Mass";
+        }
+        #endregion
+        private void AstronomcalProcessingApplication_Click(object sender, EventArgs e)
+        {
+            this.Focus();
         }
     }
 
