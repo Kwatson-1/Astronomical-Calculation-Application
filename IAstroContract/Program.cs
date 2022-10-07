@@ -11,19 +11,6 @@ namespace AstroServer
     {
         static void Main(string[] args)
         {
-            //using (ServiceHost host = new ServiceHost(typeof(AstroContract), new Uri[]
-            //{
-            //    new Uri("net.pipe://localhost/")
-            //}))
-            //{
-            //    host.AddServiceEndpoint(typeof(IAstroContract),
-            //    new NetNamedPipeBinding(), "AstroServer");
-            //    host.Open();
-            //    Console.WriteLine("Service is available. " + "Press <ENTER> to exit.");
-            //    Console.ReadLine();
-            //    host.Close();
-            //}
-
             string address = "net.pipe://localhost/AstroServer";
             ServiceHost serviceHost = new ServiceHost(typeof(AstroContract));
             NetNamedPipeBinding binding = new NetNamedPipeBinding(NetNamedPipeSecurityMode.None);

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstronomcalProcessingApplication));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelCompany = new System.Windows.Forms.Label();
+            this.labelApplicationDescription = new System.Windows.Forms.Label();
+            this.labelStarVelocity = new System.Windows.Forms.Label();
+            this.labelStarDistance = new System.Windows.Forms.Label();
+            this.labelTemperature = new System.Windows.Forms.Label();
+            this.labelEventHorizon = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,35 +77,35 @@
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label3
+            // labelCompany
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.labelCompany, "labelCompany");
+            this.labelCompany.Name = "labelCompany";
             // 
-            // label1
+            // labelApplicationDescription
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelApplicationDescription, "labelApplicationDescription");
+            this.labelApplicationDescription.Name = "labelApplicationDescription";
             // 
-            // label2
+            // labelStarVelocity
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.labelStarVelocity, "labelStarVelocity");
+            this.labelStarVelocity.Name = "labelStarVelocity";
             // 
-            // label4
+            // labelStarDistance
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.labelStarDistance, "labelStarDistance");
+            this.labelStarDistance.Name = "labelStarDistance";
             // 
-            // label5
+            // labelTemperature
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.labelTemperature, "labelTemperature");
+            this.labelTemperature.Name = "labelTemperature";
             // 
-            // label6
+            // labelEventHorizon
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.labelEventHorizon, "labelEventHorizon");
+            this.labelEventHorizon.Name = "labelEventHorizon";
             // 
             // menuStrip1
             // 
@@ -248,21 +248,25 @@
             // 
             resources.ApplyResources(this.textBoxEventHorizon, "textBoxEventHorizon");
             this.textBoxEventHorizon.Name = "textBoxEventHorizon";
+            this.textBoxEventHorizon.ReadOnly = true;
             // 
             // textBoxTemperatureKelvin
             // 
             resources.ApplyResources(this.textBoxTemperatureKelvin, "textBoxTemperatureKelvin");
             this.textBoxTemperatureKelvin.Name = "textBoxTemperatureKelvin";
+            this.textBoxTemperatureKelvin.ReadOnly = true;
             // 
             // textBoxStarDistance
             // 
             resources.ApplyResources(this.textBoxStarDistance, "textBoxStarDistance");
             this.textBoxStarDistance.Name = "textBoxStarDistance";
+            this.textBoxStarDistance.ReadOnly = true;
             // 
             // textBoxStarVelocity
             // 
             resources.ApplyResources(this.textBoxStarVelocity, "textBoxStarVelocity");
             this.textBoxStarVelocity.Name = "textBoxStarVelocity";
+            this.textBoxStarVelocity.ReadOnly = true;
             // 
             // textBox12
             // 
@@ -381,18 +385,17 @@
             this.Controls.Add(this.textBoxTemperatureCelcius);
             this.Controls.Add(this.textBoxArcsecondAngle);
             this.Controls.Add(this.textBoxObservedWavelength);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelEventHorizon);
+            this.Controls.Add(this.labelTemperature);
+            this.Controls.Add(this.labelStarDistance);
+            this.Controls.Add(this.labelStarVelocity);
+            this.Controls.Add(this.labelApplicationDescription);
+            this.Controls.Add(this.labelCompany);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AstronomcalProcessingApplication";
             this.Load += new System.EventHandler(this.AstronomcalProcessingApplication_Load);
-            this.Click += new System.EventHandler(this.AstronomcalProcessingApplication_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -405,12 +408,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelCompany;
+        private System.Windows.Forms.Label labelApplicationDescription;
+        private System.Windows.Forms.Label labelStarVelocity;
+        private System.Windows.Forms.Label labelStarDistance;
+        private System.Windows.Forms.Label labelTemperature;
+        private System.Windows.Forms.Label labelEventHorizon;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;

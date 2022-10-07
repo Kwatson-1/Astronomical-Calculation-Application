@@ -288,6 +288,9 @@
   <data name="changeForegroundColour.Text" xml:space="preserve">
     <value>Couleur de premier plan</value>
   </data>
+  <data name="lightDarkModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
   <data name="themeToolStripMenuItem.Text" xml:space="preserve">
     <value>Thème</value>
   </data>
