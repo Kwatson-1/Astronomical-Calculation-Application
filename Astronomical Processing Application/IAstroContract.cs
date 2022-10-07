@@ -7,6 +7,7 @@ using System.ServiceModel;
 
 namespace Astronomical_Processing_Application
 {
+    // Create the ServiceContract called “IAstroContract.cs” which will need to be identical to the server without a reference to the AstroMath.DLL.
     [ServiceContract]
     public interface IAstroContract
     {

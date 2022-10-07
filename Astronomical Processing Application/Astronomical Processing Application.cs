@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.ServiceModel;
 
-
-
 // Kyle Watson (30048165)
 // Date: 4/09/22
 
@@ -22,11 +20,13 @@ namespace Astronomical_Processing_Application
 
         public AstronomcalProcessingApplication()
         {
+            // Create a form with suitable components for UI
+            //  a.Series of textboxes for large numeric data
             InitializeComponent();
         }
 
         static List<Data> dataCollection = new List<Data>();
-
+        // Series of textbox / listbox / listview for display of processed information from the server
         #region Method Display List
         // Adds the items in the List to the listview
         public void DisplayList()
@@ -45,7 +45,7 @@ namespace Astronomical_Processing_Application
                 }
             }
         }
-        #endregion
+        #endregion  
         #region Method Delete
         // Method for deleting items with a yes/no message box
         public void DeleteMethod()
@@ -53,7 +53,7 @@ namespace Astronomical_Processing_Application
             try
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                if(dataCollection.Count > 0)
+                if (dataCollection.Count > 0)
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirmation", buttons);
                     if (result == DialogResult.Yes)
@@ -63,7 +63,7 @@ namespace Astronomical_Processing_Application
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("A valid item must be selected before deleting.", "Error");
             }
@@ -167,6 +167,232 @@ namespace Astronomical_Processing_Application
             return ((TextBox)control).ReadOnly;
         }
         #endregion
+
+        // Menu options to change the language and layout for the three different countries.
+        #region Button Change Languages
+        // Sets the localisable language to the tool strip menu item selected
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+            Controls.Clear();
+            InitializeComponent();
+            DisplayList();
+        }
+
+        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("de");
+            Controls.Clear();
+            InitializeComponent();
+            DisplayList();
+        }
+
+        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr");
+            Controls.Clear();
+            InitializeComponent();
+            DisplayList();
+        }
+        #endregion\
+        // Button(s) to initiate an event and send/receive data.
+        #region Button Add
+        // Adds data from the output text boxes into the list view. If a field is empty fills it with 'N/A'.
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxStarVelocity.Text) && String.IsNullOrEmpty(textBoxStarDistance.Text) && String.IsNullOrEmpty(textBoxTemperatureKelvin.Text) && String.IsNullOrEmpty(textBoxEventHorizon.Text))
+            {
+                MessageBox.Show("No output data exists to add to the display.", "Error");
+            }
+            else
+            {
+                string starVelocity;
+                string starDistance;
+                string temperature;
+                string eventHorizon;
+                if (string.IsNullOrEmpty(textBoxStarVelocity.Text))
+                {
+                    starVelocity = "N/A";
+                }
+                else
+                {
+                    starVelocity = textBoxStarVelocity.Text;
+                }
+                if (string.IsNullOrEmpty(textBoxStarDistance.Text))
+                {
+                    starDistance = "N/A";
+                }
+                else
+                {
+                    starDistance = textBoxStarDistance.Text;
+                }
+                if (string.IsNullOrEmpty(textBoxTemperatureKelvin.Text))
+                {
+                    temperature = "N/A";
+                }
+                else
+                {
+                    temperature = textBoxTemperatureKelvin.Text;
+                }
+                if (string.IsNullOrEmpty(textBoxEventHorizon.Text))
+                {
+                    eventHorizon = "N/A";
+                }
+                else
+                {
+                    eventHorizon = textBoxEventHorizon.Text;
+                }
+                Data data = new Data(starVelocity, starDistance, temperature, eventHorizon);
+                dataCollection.Add(data);
+                textBoxStarVelocity.Clear();
+                textBoxStarDistance.Clear();
+                textBoxTemperatureKelvin.Clear();
+                textBoxEventHorizon.Clear();
+            }
+            DisplayList();
+        }
+        #endregion
+        #region Button Delete
+        // Calls the delete method for the delete button
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DeleteMethod();
+            DisplayList();
+
+        }
+        #endregion
+        // Create a method to measure the Star velocity using the Doppler shift, it should have two input parameters of type double (Observed Wavelength and Rest Wavelength) and return a double which represents the velocity.
+        #region Button Calculate Star Velocity
+        // Button calculate method for star velocity
+        private void calculateStarVelocityBtn_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+            try
+            {
+                double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
+                double restWavelength = double.Parse(textBoxRestWavelength.Text);
+                var result = channel.StarVelocity(observedWavelength, restWavelength);
+                textBoxStarVelocity.Text = result.ToString("F") + " m/s";
+                textBoxObservedWavelength.Text = "Observed Wavelength";
+                textBoxObservedWavelength.ForeColor = SystemColors.ControlDark;
+                textBoxRestWavelength.Text = "Rest Wavelength";
+                textBoxRestWavelength.ForeColor = SystemColors.ControlDark;
+            }
+            catch (Exception ex)
+            {
+                textBoxObservedWavelength.Text = "Observed Wavelength";
+                textBoxObservedWavelength.ForeColor = SystemColors.ControlDark;
+                textBoxRestWavelength.Text = "Rest Wavelength";
+                textBoxRestWavelength.ForeColor = SystemColors.ControlDark;
+                MessageBox.Show(ex.Message, "Error");
+
+            }
+        }
+        #endregion
+        // : Create a method to measure the star distance using the parallax angle, it should have a single input parameter of type double (Arcseconds angle) and return a double. The parallax angle is measured at two different points and works on nearby stars. The method must return a double which is a value in parsecs. 
+        #region Button Calculate Star Distance
+        // Button calculate method for star distance
+        private void calculateStarDistance_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+            try
+            {
+                double arcsecondAngle = double.Parse(textBoxArcsecondAngle.Text);
+                var result = channel.StarDistance(arcsecondAngle);
+                textBoxStarDistance.Text = result.ToString("F") + " parsecs";
+                textBoxArcsecondAngle.Clear();
+                textBoxArcsecondAngle.Text = "Arcsecond Angle";
+                textBoxArcsecondAngle.ForeColor = SystemColors.ControlDark;
+            }
+            catch (Exception ex)
+            {
+                textBoxArcsecondAngle.Text = "Arcsecond Angle";
+                textBoxArcsecondAngle.ForeColor = SystemColors.ControlDark;
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+        #endregion
+        // The Kelvin temperature scale is the primary temperature used in science and is easily converted from Celsius. Create a method that has a single input parameter of type double (temperature in Celsius) and returns a double which is the temperature in degrees kelvin. 
+        #region Button Calculate Temperature
+        // Button calculate method for temperature
+        private void calculateTemperature_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+            try
+            {
+                if (double.Parse(textBoxTemperatureCelcius.Text) > -273.15)
+                {
+                    double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
+                    var result = channel.TemperatureKelvin(tempCelcius);
+                    textBoxTemperatureKelvin.Text = result.ToString("F") + " K";
+                    textBoxTemperatureCelcius.Clear();
+                    textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
+                    textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
+                }
+                else
+                {
+                    textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
+                    textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
+                    MessageBox.Show("Value must be greater than -273.15.", "Error");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
+                textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+        #endregion
+        // Create a method that will return the distance from the centre of a blackhole to the event horizon. The method must have a single input parameter of type double (Blackhole Mass) and return a double which is the event horizon in metres.
+        #region Button Calculate Event Horizon
+        // Button calculate method for event horizon
+        private void calculateEventHorizonBtn_Click(object sender, EventArgs e)
+        {
+            IAstroContract channel = CommunicationChannel();
+            try
+            {
+                double blackholeMass = double.Parse(textBoxBlackholeMass.Text) * (Math.Pow(10, double.Parse(numericUpDown1.Value.ToString())));
+                var result = channel.EventHorizon(blackholeMass);
+
+                int counter = 0;
+                // Handles results with a positive exponent
+                if (result > 10)
+                {
+                    while (result > 10)
+                    {
+                        result /= 10;
+                        counter++;
+                    }
+                    textBoxEventHorizon.Text = result.ToString("F") + "E" + counter + " metres";
+                }
+                // Handles results with a negative exponent
+                if (result < 1)
+                {
+                    while (result < 1)
+                    {
+                        result *= 10;
+                        counter++;
+                    }
+                    textBoxEventHorizon.Text = result.ToString("F") + "E-" + counter + " metres";
+                }
+                textBoxBlackholeMass.Clear();
+                textBoxBlackholeMass.Text = "Blackhole Mass";
+                textBoxBlackholeMass.ForeColor = SystemColors.ControlDark;
+                numericUpDown1.Value = 0;
+            }
+            catch (Exception ex)
+            {
+                textBoxBlackholeMass.Text = "Blackhole Mass";
+                textBoxBlackholeMass.ForeColor = SystemColors.ControlDark;
+                MessageBox.Show(ex.Message, "Error");
+            }
+
+        }
+        #endregion
+        // Menu options to change the form’s theme (colours and visual appearance).
         #region Button Select Forecolour
         // Forecolour is stored within an empty label variable when selected from the Colour Dialog box.
         private void changeForegroundColour_Click(object sender, EventArgs e)
@@ -210,224 +436,6 @@ namespace Astronomical_Processing_Application
         private void changeBackgroundColour_Click(object sender, EventArgs e)
         {
             PickBackColour();
-        }
-        #endregion
-        #region Button Change Language
-        // Sets the localisable language to the tool strip menu item selected
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
-            Controls.Clear();
-            InitializeComponent();
-            DisplayList();
-        }
-
-        private void germanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("de");
-            Controls.Clear();
-            InitializeComponent();
-            DisplayList();
-        }
-
-        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CultureInfo.CurrentUICulture = CultureInfo.CreateSpecificCulture("fr");
-            Controls.Clear();
-            InitializeComponent();
-            DisplayList();
-        }
-        #endregion
-        #region Button Add
-        // Adds data from the output text boxes into the list view. If a field is empty fills it with 'N/A'.
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(textBoxStarVelocity.Text) && String.IsNullOrEmpty(textBoxStarDistance.Text) && String.IsNullOrEmpty(textBoxTemperatureKelvin.Text) && String.IsNullOrEmpty(textBoxEventHorizon.Text))
-            {
-                MessageBox.Show("No output data exists to add to the display.", "Error");
-            }
-            else
-            {
-                string starVelocity;
-                string starDistance;
-                string temperature;
-                string eventHorizon;
-                if (string.IsNullOrEmpty(textBoxStarVelocity.Text))
-                {
-                    starVelocity = "N/A";
-                }
-                else
-                {
-                    starVelocity = textBoxStarVelocity.Text;
-                }
-                if (string.IsNullOrEmpty(textBoxStarDistance.Text))
-                {
-                    starDistance = "N/A";
-                }
-                else
-                {
-                    starDistance = textBoxStarDistance.Text;
-                }
-                if (string.IsNullOrEmpty(textBoxTemperatureKelvin.Text))
-                {
-                    temperature = "N/A";
-                }
-                else 
-                {
-                    temperature = textBoxTemperatureKelvin.Text;
-                }
-                if (string.IsNullOrEmpty(textBoxEventHorizon.Text))
-                {
-                    eventHorizon = "N/A";
-                }
-                else
-                {
-                    eventHorizon = textBoxEventHorizon.Text;
-                }
-                Data data = new Data(starVelocity, starDistance, temperature, eventHorizon);
-                dataCollection.Add(data);
-                textBoxStarVelocity.Clear();
-                textBoxStarDistance.Clear();
-                textBoxTemperatureKelvin.Clear();
-                textBoxEventHorizon.Clear();
-            }
-            DisplayList();
-        }
-        #endregion
-        #region Button Delete
-        // Calls the delete method for the delete button
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            DeleteMethod();
-            DisplayList();
-
-        }
-        #endregion
-        #region Button Calculate Star Velocity
-        // Button calculate method for star velocity
-        private void calculateStarVelocityBtn_Click(object sender, EventArgs e)
-        {
-            IAstroContract channel = CommunicationChannel();
-            try
-            {
-                double observedWavelength = double.Parse(textBoxObservedWavelength.Text);
-                double restWavelength = double.Parse(textBoxRestWavelength.Text);
-                var result = channel.StarVelocity(observedWavelength, restWavelength);
-                textBoxStarVelocity.Text = result.ToString("F");
-                textBoxObservedWavelength.Text = "Observed Wavelength";
-                textBoxObservedWavelength.ForeColor = SystemColors.ControlDark;
-                textBoxRestWavelength.Text = "Rest Wavelength";
-                textBoxRestWavelength.ForeColor = SystemColors.ControlDark;
-            }
-            catch(Exception ex) 
-            {
-                textBoxObservedWavelength.Text = "Observed Wavelength";
-                textBoxObservedWavelength.ForeColor = SystemColors.ControlDark;
-                textBoxRestWavelength.Text = "Rest Wavelength";
-                textBoxRestWavelength.ForeColor = SystemColors.ControlDark;
-                MessageBox.Show(ex.Message, "Error");
-
-            }
-        }
-        #endregion
-        #region Button Calculate Event Horizon
-        // Button calculate method for event horizon
-        private void calculateEventHorizonBtn_Click(object sender, EventArgs e)
-        {
-            IAstroContract channel = CommunicationChannel();
-            try
-            {
-                double blackholeMass = double.Parse(textBoxBlackholeMass.Text) * (Math.Pow(10, double.Parse(numericUpDown1.Value.ToString())));
-                var result = channel.EventHorizon(blackholeMass);
-
-                int counter = 0;
-                // Handles results with a positive exponent
-                if (result > 10)
-                {
-                    while (result > 10)
-                    {
-                        result /= 10;
-                        counter++;
-                    }
-                    textBoxEventHorizon.Text = result.ToString("F") + "E" + counter;
-                }
-                // Handles results with a negative exponent
-                if (result < 1)
-                {
-                    while (result < 1)
-                    {
-                        result *= 10;
-                        counter++;
-                    }
-                    textBoxEventHorizon.Text = result.ToString("F") + "E-" + counter;
-                }
-                textBoxBlackholeMass.Clear();
-                textBoxBlackholeMass.Text = "Blackhole Mass";
-                textBoxBlackholeMass.ForeColor = SystemColors.ControlDark;
-                numericUpDown1.Value = 0;
-            }
-            catch(Exception ex)
-            {
-                textBoxBlackholeMass.Text = "Blackhole Mass";
-                textBoxBlackholeMass.ForeColor = SystemColors.ControlDark;
-                MessageBox.Show(ex.Message, "Error");
-            }
-            
-        }
-        #endregion
-        #region Button Calculate Temperature
-        // Button calculate method for temperature
-        private void calculateTemperature_Click(object sender, EventArgs e)
-        {
-            IAstroContract channel = CommunicationChannel();
-            try
-            {
-                if(double.Parse(textBoxTemperatureCelcius.Text) > -273.15)
-                {
-                    double tempCelcius = double.Parse(textBoxTemperatureCelcius.Text);
-                    var result = channel.TemperatureKelvin(tempCelcius);
-                    textBoxTemperatureKelvin.Text = result.ToString("F");
-                    textBoxTemperatureCelcius.Clear();
-                    textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
-                    textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
-                }
-                else
-                {
-                    textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
-                    textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
-                    MessageBox.Show("Value must be greater than -273.15.", "Error");
-
-                }
-
-            }
-            catch(Exception ex)
-            {
-                textBoxTemperatureCelcius.Text = "Temperature (Celcius)";
-                textBoxTemperatureCelcius.ForeColor = SystemColors.ControlDark;
-                MessageBox.Show(ex.Message, "Error");
-            }
-        }
-        #endregion
-        #region Button Calculate Star Distance
-        // Button calculate method for star distance
-        private void calculateStarDistance_Click(object sender, EventArgs e)
-        {
-            IAstroContract channel = CommunicationChannel();
-            try
-            {
-                double arcsecondAngle = double.Parse(textBoxArcsecondAngle.Text);
-                var result = channel.StarDistance(arcsecondAngle);
-                textBoxStarDistance.Text = result.ToString("F");
-                textBoxArcsecondAngle.Clear();
-                textBoxArcsecondAngle.Text = "Arcsecond Angle";
-                textBoxArcsecondAngle.ForeColor = SystemColors.ControlDark;
-            }
-            catch (Exception ex)
-            {
-                textBoxArcsecondAngle.Text = "Arcsecond Angle";
-                textBoxArcsecondAngle.ForeColor = SystemColors.ControlDark;
-                MessageBox.Show(ex.Message, "Error");
-            }
         }
         #endregion
         #region Menu Toggle Light/Dark Mode
