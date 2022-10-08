@@ -1,0 +1,20 @@
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\Astronomical Processing Application.exe.config
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\Astronomical Processing Application.exe
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\Astronomical Processing Application.pdb
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\de\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\en\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\bin\Release\fr\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.csproj.AssemblyReference.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.csproj.SuggestedBindingRedirects.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical_Processing_Application.Properties.Resources.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.de.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.en.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.fr.resources
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.csproj.GenerateResource.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.csproj.CoreCompileInputs.cache
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\de\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\en\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\fr\Astronomical Processing Application.resources.dll
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.exe
+C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.pdb
