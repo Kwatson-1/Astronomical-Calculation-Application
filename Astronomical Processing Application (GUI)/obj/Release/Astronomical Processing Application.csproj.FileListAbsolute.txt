@@ -18,3 +18,23 @@ C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\fr\Astronomical Processing Application.resources.dll
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.exe
 C:\Users\Kyle\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application\obj\Release\Astronomical Processing Application.pdb
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\Astronomical Processing Application.exe.config
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\Astronomical Processing Application.exe
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\Astronomical Processing Application.pdb
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\de\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\en\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\bin\Release\fr\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.csproj.AssemblyReference.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.csproj.SuggestedBindingRedirects.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical_Processing_Application.Properties.Resources.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.de.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.en.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical_Processing_Application.AstronomcalProcessingApplication.fr.resources
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.csproj.GenerateResource.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.csproj.CoreCompileInputs.cache
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\de\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\en\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\fr\Astronomical Processing Application.resources.dll
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.exe
+C:\Users\30048165\Documents\GitHub\Astronomical-Calculation-Application\Astronomical Processing Application (GUI)\obj\Release\Astronomical Processing Application.pdb
